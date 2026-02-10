@@ -4,6 +4,7 @@
 
 int length;
 
+//This is a bank for us to pull from
 char lower[]   = "abcdefghijklmnopqrstuvwxyz";
 char capitals[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 char special[] = "!@#$%&?";
@@ -16,7 +17,7 @@ int main(void)
 
     srand(time(NULL));
 
-    /* Minimum length */
+    //This asks the minimum length of a password
     printf("Please enter a minimum length for the password: ");
     scanf("%d", &length);
 
@@ -25,7 +26,7 @@ int main(void)
         return 1;
     }
 
-    /* Uppercase */
+    //This asks how many uppercase letters a password should contain
     printf("Should the password have uppercase letters? (Y/N): ");
     scanf(" %c", &upper_q);
 
@@ -42,7 +43,7 @@ int main(void)
         return 1;
     }
 
-    /* Special characters */
+    //Most passwords have the funny special characters like &, %, and #, so this asks if it should contain them
     printf("Should the password have special characters? (Y/N): ");
     scanf(" %c", &special_q);
 
@@ -59,7 +60,7 @@ int main(void)
         return 1;
     }
 
-    /* Numbers */
+    //This asks if the password should contain numbers
     printf("Should the password have numbers? (Y/N): ");
     scanf(" %c", &number_q);
 
@@ -76,13 +77,7 @@ int main(void)
         return 1;
     }
 
-    /* Validate total */
-    if (upper_count + special_count + number_count > length) {
-        printf("Error. The amount of characters exceeds the minimum length.\n");
-        return 1;
-    }
-
-    /* Generate password */
+    //This part generates the actual password
     char password[length + 1];
     int i = 0;
 
@@ -112,3 +107,5 @@ int main(void)
 
     return 0;
 }
+//Congrats! You've made a password :D
+//lol
