@@ -103,6 +103,13 @@ int main(void)
 
     password[length] = '\0';
 
+    //Lastly, this randomizes the password. Hopefully.
+    for (int j = length - 1; j > 0; j--) {
+            int k = rand() % (j+1);
+            char temp = password[j];
+            password[j] = password[k];
+            password[k] = temp;
+    }
     printf("Generated Password: %s\n", password);
 
     return 0;
